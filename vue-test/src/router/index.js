@@ -91,6 +91,15 @@ export default new Router({
      meta:{
          title:'购物车'
      }
+   },
+   {
+     path:'/pages/login/login',
+     name:'UserLogIn',
+     component:()=>import('@/pages/login/login'),
+     meta:{
+         title:'登录'
+     }
    }
   ]
 })
+

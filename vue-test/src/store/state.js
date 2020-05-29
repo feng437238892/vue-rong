@@ -7,7 +7,7 @@ const state = {
       },
       nickName:'Nicholas',
       testTxt: {"tips":"这是一条vuex的数据","id":1},
-      nickName: "222",
+      nickName: "222"
       
 }
 export default state;

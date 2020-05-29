@@ -8,6 +8,9 @@
              <h2>{{msg}}</h2>
 		</div>
 	</div>
+
+
+	
 </template>
 <script>
 	import headTop from '@/components/head/head'
