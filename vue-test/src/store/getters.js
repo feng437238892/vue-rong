@@ -4,6 +4,9 @@ const getters = {
      },
      data_list:function(state){
      	return state.data_list;
+     },
+     isLogin:function(state){
+     	    return state.isLogin;
      }    
 }
 export default getters

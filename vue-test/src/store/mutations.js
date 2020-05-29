@@ -23,11 +23,11 @@ const mutations = {
    // console.log(state)
    // console.log(msg)
   },
-  　updateUserInfo(state,nickName) {
+  updateUserInfo(state,nickName) {
          console.log(state)
          console.log(nickName)
 　　　　　　state.nickName = nickName;
 
-　},
+　}
 }
 export default mutations;

@@ -28,6 +28,44 @@
 		 </div>
 
 		 <div class="cart" @click="evt_cart('/pages/cart/cart')">购物车页面</div>
+		 <div class="cart" @click="evt_login('/pages/login/login')">登录页面</div>
+
+
+		<el-row>
+		  <el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
+		</el-row>
+		<el-row>
+		  <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+		  <el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
+		</el-row>
+		<el-row>
+		  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+		  <el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
+		  <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+		</el-row>
+		<el-row>
+		  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+		  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+		  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+		  <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+		</el-row>
+		<el-row>
+		  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+		  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
+		  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+		  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
+		  <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+		  <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
+		</el-row>
+
+		<el-row>
+		  <el-button>默认按钮</el-button>
+		  <el-button type="primary">主要按钮</el-button>
+		  <el-button type="success">成功按钮</el-button>
+		  <el-button type="info">信息按钮</el-button>
+		  <el-button type="warning">警告按钮</el-button>
+		  <el-button type="danger">危险按钮</el-button>
+		</el-row>
 	</div>
 </template>
 <script>
@@ -47,6 +85,17 @@
 		   headTop	
 		},
 		methods:{
+			beforeRouteEnter(to, from, next) {
+			    console.log(this, 'beforeRouteEnter'); // undefined
+			    console.log(to, '组件独享守卫beforeRouteEnter第一个参数');
+			    console.log(from, '组件独享守卫beforeRouteEnter第二个参数');
+			    console.log(next, '组件独享守卫beforeRouteEnter第三个参数');
+			    next(vm => {
+			      //因为当钩子执行前，组件实例还没被创建
+			      // vm 就是当前组件的实例相当于上面的 this，所以在 next 方法里你就可以把 vm 当 this 来用了。
+			      console.log(vm);//当前组件的实例
+			    });
+			 },
 			evt_to(){
               this.$router.push('/pages/menu/menu?show=true')
 			},
@@ -94,6 +143,9 @@
 			},
 			evt_cart:function(link){
 				this.$router.push(link)
+			},
+			evt_login:function(val){
+				this.$router.push(val)
 			}
 			// ...mapActions([
 			// 	'add'
@@ -165,5 +217,32 @@
 	  .cart{
 	  	font-size:16px;
 	  	text-align: center;
+	  }
+
+	  .el-row {
+	    margin-bottom: 20px;
+	    &:last-child {
+	      margin-bottom: 0;
+	    }
+	  }
+	  .el-col {
+	    border-radius: 4px;
+	  }
+	  .bg-purple-dark {
+	    background: #99a9bf;
+	  }
+	  .bg-purple {
+	    background: #d3dce6;
+	  }
+	  .bg-purple-light {
+	    background: #e5e9f2;
+	  }
+	  .grid-content {
+	    border-radius: 4px;
+	    min-height: 36px;
+	  }
+	  .row-bg {
+	    padding: 10px 0;
+	    background-color: #f9fafc;
 	  }
 </style>
