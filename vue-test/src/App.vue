@@ -22,6 +22,7 @@ export default {
 @import '../node_modules/vue-directive-image-previewer/dist/assets/style.css';
 html,body{
   margin: 0;
+  padding: 0;
 }
 #app {
  
