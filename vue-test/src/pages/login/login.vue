@@ -12,7 +12,8 @@
 		data(){
 			return{
 				 name: "",
-                 psd: ""
+                 psd: "",
+                 test:234
 			}
 		},
 		methods:{
